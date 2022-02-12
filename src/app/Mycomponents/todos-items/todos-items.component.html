@@ -1,0 +1,12 @@
+<div class="my-3">
+<h5 [ngClass]="{'strike':!todo.active}" >{{todo.title}}</h5>
+<p [ngClass]="{'strike':!todo.active}" >{{todo.desc}}</p>
+  <div class="form-check form-group">
+  <input type="checkbox" class="form-check-input" name="checkBox" id="checkBox{{i}}" (click)="onCheckBox(todo)" [checked]="!todo.active">
+    <div *ngIf="!todo.active == true; else elseBlock"><label class="form-check-label mb-2" for="checkBox{{i}}"> Strike Done </label></div>
+  <ng-template #elseBlock>
+    <label class="form-check-label mb-2" for="checkBox{{i}}"> Strike Undone </label>
+  </ng-template>
+  </div>
+<button class="btn-sm bg-danger btn" (click)="deleteTodo(todo)">Delete</button>
+</div>

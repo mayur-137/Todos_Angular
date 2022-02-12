@@ -1,12 +1,12 @@
 <h3> Add Todos </h3>
-<form>
+<form (ngSubmit)="onSubmit()">
 <div class="mb-3">
   <label for="title" class="form-label">Title</label>
-  <input type="text" class="form-control" id="title" name="title" >
+  <input type="text" class="form-control" id="title" name="title" [(ngModel)]="title">
 </div>
 <div class="mb-3">
   <label for="desc" class="form-label">Description</label>
-  <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+  <textarea class="form-control" id="desc" name="desc" rows="3" [(ngModel)]="desc"></textarea>
   <button class="btn btn-primary btn-sm mt-3">Add A Todo</button>
 </div>
 </form>
